@@ -34,7 +34,7 @@ func main() {
 ### Output Unguided :
 
 ##### Output 
-![Screenshot Output Soal 1]()
+![Screenshot Output Soal 1](output/outputsatu.png)
 [penjelasan]
   Jadi kode itu digunakan untuk menggeser posisi nilai variabel
 
@@ -70,7 +70,7 @@ func main() {
 ### Output Unguided :
 
 ##### Output 
-![Screenshot Output Soal 1]()
+![Screenshot Output Soal 2](output/outputsoal2b.png)
 [penjelasan]
  Jadi kode itu digunakan untuk melakukan pengecekan string di dalam sebuah perulangan sebanyak 5 kali,jika ada satu yang tidak sama maka bisa dikatakan false.
 
@@ -118,6 +118,6 @@ func main() {
 ### Output Unguided :
 
 ##### Output 
-![Screenshot Output Soal 1]()
+![Screenshot Output Soal 3](output/outputsoal2c.png)
 [penjelasan]
   Jadi kode tersebut digunakan untuk biaya pengiriman berdasarkan berat paket dalam sebuah gram.
