@@ -1,33 +1,48 @@
-# <h1 align="center">Laporan Praktikum Modul 1 - ... </h1>
+# <h1 align="center">Laporan Praktikum Modul 3- ... </h1>
 <p align="center">Wahhaj - 109082530020</p>
 
 ## Unguided 
 
-### 1. [Soal modul 2A]
+### 1. [Soal modul 3A]
 #### satu.go
 
 ```go
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
+
+func factorial(n int) int64 {
+	var res int64 = 1
+	for i := 1; i <= n; i++ {
+		res *= int64(i)
+	}
+	return res
+}
+
+func permutation(n, r int) int64 {
+
+	return factorial(n) / factorial(n-r)
+}
+
+func combination(n, r int) int64 {
+	
+	return permutation(n, r) / factorial(r)
+}
 
 func main() {
-	var (
-		satu, dua, tiga string
-		temp            string
-	)
-	fmt.Print("Masukan input string: ")
-	fmt.Scanln(&satu)
-	fmt.Print("Masukan input string: ")
-	fmt.Scanln(&dua)
-	fmt.Print("Masukan input string: ")
-	fmt.Scanln(&tiga)
-	fmt.Println("Output awal = " + satu + " " + dua + " " + tiga)
-	temp = satu
-	satu = dua
-	dua = tiga
-	tiga = temp
-	fmt.Println("Output akhir = " + satu + " " + dua + " " + tiga)
+	var a, b, c, d int
+
+	_, err := fmt.Scan(&a, &b, &c, &d)
+	if err != nil {
+		return
+	}
+
+
+	fmt.Printf("%d %d\n", permutation(a, c), combination(a, c))
+
+	fmt.Printf("%d %d\n", permutation(b, d), combination(b, d))
 }
 
 ```
