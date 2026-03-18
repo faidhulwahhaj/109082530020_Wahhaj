@@ -49,83 +49,103 @@ func main() {
 ### Output Unguided :
 
 ##### Output 
-![Screenshot Output Soal 1](output/outputsatu.png)
+![Screenshot Output Soal 1](output/satu.png)
 [penjelasan]
-  Jadi kode itu digunakan untuk menggeser posisi nilai variabel
+  Jadi kode tersebut digunakan menghitung objek dari sekumpulan data.
 
-  ### 2. [Soal modul 2B]
-#### soal2b.go
+  ### 2. [Soal modul 3B]
+#### soal3b.go
 
 ```go
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
+
+func f(x int) int {
+	return x * x
+}
+
+
+func g(x int) int {
+	return x - 2
+}
+
+func h(x int) int {
+	return x + 1
+}
 
 func main() {
-	
+	var a, b, c int
 
-	var w1, w2, w3, w4 string
 
-	hasilAkhir := true
-
-	for i := 1; i <= 5; i++ {
-		fmt.Printf("Percobaan %d: ", i)
-	
-		fmt.Scan(&w1, &w2, &w3, &w4)
-
-	
-		if w1 != "merah" || w2 != "kuning" || w3 != "hijau" || w4 != "ungu" {
-			hasilAkhir = false
-		}
+	_, err := fmt.Scan(&a, &b, &c)
+	if err != nil {
+		return
 	}
-	fmt.Printf("BERHASIL: %t\n", hasilAkhir)
+
+	fmt.Println(f(g(g(a))))
+
+	fmt.Println(g(h(f(b))))
+
+	fmt.Println(h(f(g(c))))
 }
 
 ```
 ### Output Unguided :
 
 ##### Output 
-![Screenshot Output Soal 2](output/outputsoal2b.png)
+![Screenshot Output Soal 2](output/3b.png)
 [penjelasan]
- Jadi kode itu digunakan untuk melakukan pengecekan string di dalam sebuah perulangan sebanyak 5 kali,jika ada satu yang tidak sama maka bisa dikatakan false.
+ Jadi kode tersebut digunakan untuk menghitung komposisi fungsi matematika dalam pemrograman.
 
 
-### 3. [Soal modul 2C]
-#### soal2c.go
+### 3. [Soal modul 3C]
+#### soal3c.go
 
 ```go
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
+
+func jarak(a, b, c, d float64) float64 {
+	
+	return math.Sqrt(math.Pow(a-c, 2) + math.Pow(b-d, 2))
+}
+
+func didalam(cx, cy, r, x, y float64) bool {
+	
+	return jarak(cx, cy, x, y) <= r
+}
 
 func main() {
-	var beratGram int
-	fmt.Print("Berat parsel (gram): ")
-	fmt.Scan(&beratGram)
-
-	kg := beratGram / 1000
-	sisaGram := beratGram % 1000
+	var cx1, cy1, r1 float64
+	var cx2, cy2, r2 float64
+	var x, y float64
 
 
-	biayaKg := kg * 10000
+	fmt.Scan(&cx1, &cy1, &r1)
+	
+	fmt.Scan(&cx2, &cy2, &r2)
+	
+	fmt.Scan(&x, &y)
 
+	inL1 := didalam(cx1, cy1, r1, x, y)
+	inL2 := didalam(cx2, cy2, r2, x, y)
 
-	var biayaSisa int
-	if sisaGram >= 500 {
-		biayaSisa = sisaGram * 5
+	if inL1 && inL2 {
+		fmt.Println("Titik di dalam lingkaran 1 dan 2")
+	} else if inL1 {
+		fmt.Println("Titik di dalam lingkaran 1")
+	} else if inL2 {
+		fmt.Println("Titik di dalam lingkaran 2")
 	} else {
-		biayaSisa = sisaGram * 15
+		fmt.Println("Titik di luar lingkaran 1 dan 2")
 	}
-
-	totalBiaya := biayaKg + biayaSisa
-	if kg > 10 {
-		totalBiaya = biayaKg
-	}
-
-	
-	fmt.Printf("Detail berat: %d kg + %d gr\n", kg, sisaGram)
-	fmt.Printf("Detail biaya: Rp. %d + Rp. %d\n", biayaKg, biayaSisa)
-	fmt.Printf("Total biaya: Rp. %d\n", totalBiaya)
 }
 
 
@@ -133,6 +153,6 @@ func main() {
 ### Output Unguided :
 
 ##### Output 
-![Screenshot Output Soal 3](output/outputsoal2c.png)
+![Screenshot Output Soal 3](output/3c.png)
 [penjelasan]
-  Jadi kode tersebut digunakan untuk biaya pengiriman berdasarkan berat paket dalam sebuah gram.
+  Jadi kode tersebut digunakan untuk menghitung geometri kumputasi sederhana yang berfungsi untuk mengecek posisi sebuah titik.
